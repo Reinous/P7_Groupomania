@@ -14,7 +14,7 @@ git clone https://github.com/Reinous/P7_Groupomania.git
 
 - Vous verrez deux dossiers distincts: Frontend et Backend.
 
-## DANS LE DOSSIER FRONTEND
+## DANS LE DOSSIER FRONTEND/GROUPOMANIA
 
 - Ouvrez un premier terminal et faites:
 
