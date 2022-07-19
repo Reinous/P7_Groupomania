@@ -12,6 +12,7 @@ exports.signup = (req, res, next) => {
 			const user = new User({
 				email: req.body.email,
 				password: hash,
+				username: req.body.username,
 			});
 			user
 				.save()
@@ -26,12 +27,14 @@ exports.login = (req, res, next) => {
 		.then((user) => {
 			if (!user) {
 				return res.status(401).json({ error: 'Utilisateur non trouvé !' });
+				console.log('Erreur n1');
 			}
 			bcrypt
 				.compare(req.body.password, user.password)
 				.then((valid) => {
 					if (!valid) {
 						return res.status(401).json({ error: 'Mot de passe incorrect !' });
+						console.log('Erreur n2');
 					}
 					res.status(200).json({
 						userId: user._id,
@@ -42,6 +45,7 @@ exports.login = (req, res, next) => {
 								expiresIn: '12h',
 							}
 						),
+						isAdmin: user.isAdmin,
 					});
 				})
 				.catch((error) => {

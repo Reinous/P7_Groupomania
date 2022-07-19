@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const app = express();
 const path = require('path');
 
 const messagesRoutes = require('./routes/message');
@@ -15,6 +14,9 @@ mongoose
 	)
 	.then(() => console.log('Connexion à MongoDB réussie !'))
 	.catch(() => console.log('Connexion à MongoDB échouée !'));
+
+const app = express();
+app.use(express.json());
 
 //pour le CORS
 app.use((req, res, next) => {
@@ -30,7 +32,6 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use(express.json());
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.use('/api/messages', messagesRoutes);

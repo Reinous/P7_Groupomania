@@ -4,8 +4,8 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import LoginForm from '../views/LoginForm.vue';
 import SignIn from '../views/SignIn.vue';
-import EditArticle from '../components/EditArticle.vue';
-import GetOneArticle from '@/components/GetOneArticle.vue';
+import EditMessage from '../components/EditMessage.vue';
+import GetOneMessage from '@/components/GetOneMessage.vue';
 
 const routes = [
 	{
@@ -24,14 +24,14 @@ const routes = [
 		component: SignIn,
 	},
 	{
-		path: '/edit/:articleId',
-		name: 'editarticle',
-		component: EditArticle,
+		path: '/edit/:messageId',
+		name: 'editmessage',
+		component: EditMessage,
 	},
 	{
-		path: '/:articleId',
-		name: 'getonearticle',
-		component: GetOneArticle,
+		path: '/:messageId',
+		name: 'getonemessage',
+		component: GetOneMessage,
 	},
 ];
 

@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 
 const messageSchema = mongoose.Schema({
-	posterId: { type: String, required: true },
+	userId: { type: String, required: true },
 	username: { type: String, required: true },
-	tittle: { type: String, required: true },
+	title: { type: String, required: true },
 	description: { type: String, required: true },
-	date: { type: Date, required: true },
+	date: { type: String, required: true },
 	//modifyDate: { type: [Date], required: true },
 	//numberOfChange: { type: Number, required: true, default: 0 },
-	imageUrl: { type: String, required: true },
+	imageUrl: { type: String },
 	likes: { type: Number, required: true, default: 0 },
-	dislikes: { type: Number, required: true, default: 0 },
+	//dislikes: { type: Number, required: true, default: 0 },
 	usersLiked: { type: [String], required: true, default: [] },
-	usersDisliked: { type: [String], required: true, default: [] },
+	//usersDisliked: { type: [String], required: true, default: [] },
 	/*comments: {
 		type: [
 			{
