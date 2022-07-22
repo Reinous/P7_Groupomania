@@ -52,6 +52,9 @@ npm install
 node server
 ```
 
+- Renomé le .env.example en .env
+  Et rentré les variable correspondante
+
 ## DANS LE NAVIGATEUR
 
 - Ouvrez votre navigateur à l'adresse: http://localhost:8080/

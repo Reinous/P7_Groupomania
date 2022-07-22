@@ -28,13 +28,8 @@
 				</div>
 				<div class="form-floating">
 					<img class="cardImg" v-if="imageUrl !== undefined" :src="imageUrl" />
-					<input
-						type="file"
-						name="inputFile"
-						id="fileImg"
-						@change="onFileChange"
-					/>
-					<label class="label" for="inputFile"></label>
+					<input type="file" name="image" id="fileImg" @change="onFileChange" />
+					<label class="label" for="image"></label>
 				</div>
 				<div class="btnSignIn">
 					<button
@@ -76,7 +71,7 @@ export default {
 		async modifyMessage() {
 			const data = new FormData();
 			if (this.imageUrl !== null) {
-				data.append('inputFile', this.imageUrl);
+				data.append('image', this.imageUrl);
 			}
 
 			data.append('title', this.title);
@@ -149,6 +144,10 @@ input {
 	padding: 10px 0 20px 0;
 	box-shadow: 1px 1px 10px rgb(212 212 212);
 	margin-top: 50px;
+}
+
+.cardImg {
+	width: 80%;
 }
 
 .form-textarea {

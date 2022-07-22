@@ -46,6 +46,7 @@ exports.login = (req, res, next) => {
 							}
 						),
 						isAdmin: user.isAdmin,
+						username: user.username,
 					});
 				})
 				.catch((error) => {

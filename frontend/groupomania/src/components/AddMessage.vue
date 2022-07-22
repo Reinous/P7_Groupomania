@@ -61,7 +61,7 @@
 								<input
 									class="form-control"
 									type="file"
-									name="inputFile"
+									name="image"
 									id="formFile"
 									aria-label="Photo"
 									@change="onFileChange"
@@ -115,7 +115,7 @@ export default {
 
 			const data = new FormData();
 			if (this.imageUrl !== null) {
-				data.append('inputFile', this.imageUrl);
+				data.append('image', this.imageUrl);
 			}
 			data.append('description', this.description);
 			data.append('title', this.title);
