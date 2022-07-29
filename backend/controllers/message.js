@@ -58,10 +58,17 @@ exports.modifyMessage = async (request, response) => {
 			const filename = message.imageUrl.split('/images/')[1];
 			fs.unlink(`images/${filename}`, () => {});
 		}
+		console.log('Request body');
 		console.log({ ...request.body, _id: request.params.id });
 		await Message.updateOne(
 			{ _id: request.params.id },
-			{ ...request.body, _id: request.params.id }
+			{
+				...request.body,
+				_id: request.params.id,
+				imageUrl: `${request.protocol}://${request.get('host')}/images/${
+					request.file.filename
+				}`,
+			}
 		);
 		response.status(200).json({ message: 'Objet modifié' });
 	} catch (e) {

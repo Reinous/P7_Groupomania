@@ -137,6 +137,8 @@ export default {
 		},
 		onFileChange(e) {
 			this.imageUrl = e.target.files[0];
+			console.log('This image url');
+			console.log(this.imageUrl);
 		},
 	},
 };
