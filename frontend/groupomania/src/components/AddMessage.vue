@@ -10,7 +10,6 @@
 			Creer un post
 		</button>
 
-		<!-- Modal -->
 		<div
 			class="modal fade"
 			id="staticBackdrop"
