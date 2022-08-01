@@ -97,7 +97,7 @@ export default {
 	},
 	methods: {
 		async deletePost() {
-			var confirmPopUp = confirm(
+			const confirmPopUp = confirm(
 				`Voulez-vous supprimer le post ${this.post.title} ?`
 			);
 
